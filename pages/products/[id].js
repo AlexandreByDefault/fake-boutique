@@ -17,7 +17,14 @@ export async function getStaticProps(context) {
     const res = await fetch("https://fakestoreapi.com/products");
     const products = await res.json();
     const params = context.params.id;
-    const productId = products.find((product) => product.id === params);
+    const productId = products.find((product) => product.id.toString() === params);
+
+    if (!productId) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
       props: {
         params: productId,
