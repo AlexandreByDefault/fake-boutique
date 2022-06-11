@@ -1,0 +1,26 @@
+.btn{
+  display: block;
+  width: 100px;
+  background: rgba(35, 203, 60, 0.72);
+box-shadow: 0 8px 32px 0 rgba(181, 182, 193, 0.37);
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 5px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 5px;
+font-weight: bolder;
+text-align: center;
+}
+.btnPanier{
+  margin-left: 5px;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(181, 182, 193, 0.37);
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 5px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 5px;
+font-weight: bolder;
+text-align: center;
+background: rgba(0, 4, 1, 0.72);
+}
