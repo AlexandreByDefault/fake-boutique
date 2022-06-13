@@ -1,13 +1,38 @@
-.container{
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&family=Oswald:wght@300;400;500&display=swap');
+
+.logoDiv a{
+  font-family: 'Oswald',sans-serif;
+  background-color: transparent;
+}
+.navContainer{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   justify-items: center;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.ul{
-  list-style: none;
+.linkDiv{
   display: flex;
-  background-color: aquamarine;
-  justify-content: space-around;
-  justify-items: center;
+}
+.linkDiv a {
+  margin: 0 5px;
+  font-family: 'Lato',sans-serif;
+  background-color: aliceblue;
+}
+.btnDiv{
+  display: flex;
+}
+.btnDiv a{
+  margin: 0 10px ;
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Oswald', sans-serif;
+  border: 1px solid white
 }

@@ -6,18 +6,31 @@ import style from "./header.module.css";
 const MainHeader = () => {
   return (
     <header className={style.container}>
-    <h1>Faker</h1>
-      <ul className={style.ul}>
-        <li>
-          <ButtonLink link={'/'}>Products</ButtonLink>
-        </li>
-        <li>
-          <ButtonLink link={'/'}>Connexion</ButtonLink>
-        </li>
-        <li>
-          <ButtonLink link={'/'}>Inscription</ButtonLink>
-        </li>
-      </ul>
+      <nav className={style.navContainer}>
+        <div className={style.logoDiv}>
+          <ButtonLink link={"/"}> Faker</ButtonLink>
+        </div>
+        <div className={style.linkDiv}>
+          <ButtonLink  link={"/products"}>
+            Products
+          </ButtonLink>
+          <ButtonLink  link={"/"}>
+          Contact
+        </ButtonLink>
+        <ButtonLink  link={"/"}>
+        About
+      </ButtonLink>
+        </div>
+
+        <div className={style.btnDiv}>
+          <ButtonLink link={"/"}>
+            Connexion
+          </ButtonLink>
+          <ButtonLink link={"/"}>
+            Inscription
+          </ButtonLink>
+        </div>
+      </nav>
     </header>
   );
 };

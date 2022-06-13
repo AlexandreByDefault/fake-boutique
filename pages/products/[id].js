@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import style from "../../styles/detail-product.module.css";
 import { Rating } from "react-simple-star-rating";
 import { Button } from "../../components/button/button";
@@ -7,8 +7,9 @@ import Products from "../../components/product/product-list";
 import { reduceArray } from "../../components/api-utils/api-utils";
 
 const DetailsProduct = (props) => {
-  console.log(props.params.category);
-  console.log(props.similar);
+  useEffect(()=>{
+    document.title = props.params.title
+  },[props.params.title])
   const handleClickButton = () => {
     console.log("hi");
   };
