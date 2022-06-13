@@ -3,9 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import style from './button.module.css'
 
-export const Button = ({children,onClick}) => {
+export const Button = ({children,onClick,className}) => {
   return (
-    <button onClick={onClick} className={style.btnPanier}> {children}</button>
+    <button  onClick={onClick} className={className === "" ? style.btnPanier : className}> {children}</button>
   )
 }
 

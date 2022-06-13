@@ -8,7 +8,7 @@ const Product = ({ cover, title, price, rating, id }) => {
   const detailsProduct = `\products/${id}`;
   return (
     <li className={style.container}>
-      <Image src={cover} alt={title} width={150} height={150} className={style.image} />
+      <Image src={cover} alt={title} width={200} height={200} className={style.image} layout={'intrinsic'} />
       <h2 className={style.title}>{title}</h2>
       <div className={style.divInfos}>
         <table>
