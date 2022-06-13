@@ -9,13 +9,13 @@ const MainHeader = () => {
     <h1>Faker</h1>
       <ul className={style.ul}>
         <li>
-          <ButtonLink>Products</ButtonLink>
+          <ButtonLink link={'/'}>Products</ButtonLink>
         </li>
         <li>
-          <ButtonLink>Connexion</ButtonLink>
+          <ButtonLink link={'/'}>Connexion</ButtonLink>
         </li>
         <li>
-          <ButtonLink>Inscription</ButtonLink>
+          <ButtonLink link={'/'}>Inscription</ButtonLink>
         </li>
       </ul>
     </header>
