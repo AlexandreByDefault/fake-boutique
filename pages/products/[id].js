@@ -107,7 +107,7 @@ export async function getStaticProps(context) {
     return {
       props: {
         params: productId,
-        similar: sameCategory,
+        similar: reducedSameCategory,
       },
     };
   } catch {

@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+}
+
+.ul{
+  list-style: none;
+  display: flex;
+  background-color: aquamarine;
+  justify-content: space-around;
+  justify-items: center;
+}
