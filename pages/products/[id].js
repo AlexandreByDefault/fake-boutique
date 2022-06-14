@@ -7,9 +7,9 @@ import Products from "../../components/product/product-list";
 import { reduceArray } from "../../components/api-utils/api-utils";
 
 const DetailsProduct = (props) => {
-  useEffect(()=>{
-    document.title = props.params.title
-  },[props.params.title])
+  useEffect(() => {
+    document.title = props.params.title;
+  }, [props.params.title]);
   const handleClickButton = () => {
     console.log("hi");
   };
@@ -110,6 +110,7 @@ export async function getStaticProps(context) {
         params: productId,
         similar: reducedSameCategory,
       },
+      revalidate: false,
     };
   } catch {
     return {
