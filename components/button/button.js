@@ -2,10 +2,13 @@
 import Link from 'next/link'
 import React from 'react'
 import style from './button.module.css'
+const handleProductsCategories = (value) => {
+  console.log(value);
+};
 
-export const Button = ({children,onClick,myclassName}) => {
+export const Button = ({children,onClick,myclassName, value}) => {
   return (
-    <button  onClick={onClick} className={myclassName ?? style.btnPanier }> {children}</button>
+    <button  onClick={event => onClick(value, event)} value={value} className={myclassName ?? style.btnPanier }> {children}</button>
   )
 }
 
