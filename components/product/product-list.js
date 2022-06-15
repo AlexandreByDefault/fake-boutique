@@ -1,8 +1,6 @@
 import React from "react";
 import Product from "./product-item.js";
-import style from './product-list.module.css'
-
-
+import style from "./product-list.module.css";
 
 const Products = (props) => {
   const { items } = props;

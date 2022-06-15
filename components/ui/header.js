@@ -11,24 +11,14 @@ const MainHeader = () => {
           <ButtonLink link={"/"}> Faker</ButtonLink>
         </div>
         <div className={style.linkDiv}>
-          <ButtonLink  link={"/products"}>
-            Products
-          </ButtonLink>
-          <ButtonLink  link={"/"}>
-          Contact
-        </ButtonLink>
-        <ButtonLink  link={"/"}>
-        About
-      </ButtonLink>
+          <ButtonLink link={"/products"}>Products</ButtonLink>
+          <ButtonLink link={"/"}>Contact</ButtonLink>
+          <ButtonLink link={"/"}>About</ButtonLink>
         </div>
 
         <div className={style.btnDiv}>
-          <ButtonLink link={"/"}>
-            Connexion
-          </ButtonLink>
-          <ButtonLink link={"/"}>
-            Inscription
-          </ButtonLink>
+          <ButtonLink link={"/"}>Connexion</ButtonLink>
+          <ButtonLink link={"/"}>Inscription</ButtonLink>
         </div>
       </nav>
     </header>

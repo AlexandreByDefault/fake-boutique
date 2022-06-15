@@ -3,25 +3,48 @@ import { Button } from "../../components/button/button";
 import Products from "../../components/product/product-list";
 
 const ProductsAll = (props) => {
-  console.log(props.category);
 
-  const handleProductsCategories = (category) =>{
-    const filtered =  props.products.filter(product => product.category === category)
-    console.log('hi')
-  }
+  const [products, setProducts] = useState(props.products)
 
+  const handleProductsCategories = (category) => {
+    const filtered = props.products.filter(
+      (product) => product.category === category
+    );
+    setProducts(filtered)
+    return filtered;
+  };
   return (
     <section>
       <div>
         <div>
-          <Button onClick={() => handleProductsCategories(value)} value={props.category[0]}>
+          <Button
+            onClick={(e) => handleProductsCategories(e.target.value)}
+            value={props.category[0]}
+          >
             {props.category[0]}
           </Button>
-          <Button value={props.category[1]}>{props.category[1]}</Button>
-          <Button value={props.category[2]}>{props.category[2]}</Button>
-          <Button value={props.category[3]}>{props.category[3]}</Button>
+          <Button
+            onClick={(e) => handleProductsCategories(e.target.value)}
+            value={props.category[1]}
+          >
+            {props.category[1]}
+          </Button>
+          <Button
+            onClick={(e) => handleProductsCategories(e.target.value)}
+            value={props.category[2]}
+          >
+            {props.category[2]}
+          </Button>
+          <Button
+            onClick={(e) => handleProductsCategories(e.target.value)}
+            value={props.category[3]}
+          >
+            {props.category[3]}
+          </Button>
         </div>
-        <div><Products items={props.products} /></div>
+        <div>
+          <Products items={products} />
+        </div>
       </div>
       <div></div>
     </section>
