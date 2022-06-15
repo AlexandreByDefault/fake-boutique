@@ -16,13 +16,18 @@ const ProductsAll = (props) => {
   return (
     <section>
       <div>
-        <div>
-          <Button
-            onClick={(e) => handleProductsCategories(e.target.value)}
-            value={props.category[0]}
-          >
-            {props.category[0]}
-          </Button>
+      <div>
+      <Button
+      onClick={() => setProducts(props.products)}
+      >
+        All
+      </Button>
+      <Button
+        onClick={(e) => handleProductsCategories(e.target.value)}
+        value={props.category[0]}
+      >
+        {props.category[0]}
+      </Button>
           <Button
             onClick={(e) => handleProductsCategories(e.target.value)}
             value={props.category[1]}
