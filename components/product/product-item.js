@@ -15,14 +15,18 @@ const Product = ({ cover, title, price, rating, id }) => {
 
   return (
     <li className={style.container}>
-      <Image
-        src={cover}
-        alt={title}
-        width={200}
-        height={200}
-        className={style.image}
-        layout={"intrinsic"}
-      />
+
+    <div className={style.divImage}>
+    <Image
+    src={cover}
+    alt={title}
+    width={200}
+    height={200}
+    className={style.image}
+    layout={"fixed"}
+  />
+    </div>
+
       <h2 className={style.title}>{title}</h2>
       <div className={style.divInfos}>
         <table>
