@@ -4,26 +4,28 @@ import Products from "../components/product/product-list";
 import style from "../styles/home.module.css";
 import { reduceArray } from "../components/api-utils/api-utils";
 const HomePage = (props) => {
-  console.log(props.topProducts);
   return (
     <Fragment>
       <section className={style.container}>
-        <h2 className={style.titleHero}>
-          Welcome to <span> Fake Boutique </span>{" "}
-        </h2>
-        <p className={style.intro}>
-          You might looking for a new t-shirt or a luxury watch to impress your
-          girlfriend or your friend. Well ! you are on the good place ! here we
-          have all of that and more ! Amazing right ? Take a look at all our
-          product in Products{" "}
-        </p>
+        <di className={style.section}>
+          <h2 className={style.titleHero}>
+            Welcome to <span> Fake Boutique </span>{" "}
+          </h2>
+          <p className={style.intro}>
+            You might looking for a new t-shirt or a luxury watch to impress
+            your girlfriend or your friend. Well ! you are on the good place !
+            here we have all of that and more ! Amazing right ? Take a look at
+            all our product in Products{" "}
+          </p>
+        </di>
+
+        <div>
+          <h3 className={style.subTitle}>Top rated products</h3>
+          <Products items={props.topProducts} />
+          <h3 className={style.subTitle}>New Arrivals</h3>
+          <Products items={props.newProducts} />
+        </div>
       </section>
-      <div>
-        <h3 className={style.subTitle}>Top rated products</h3>
-        <Products items={props.topProducts} />
-        <h3 className={style.subTitle}>New Arrivals</h3>
-        <Products items={props.newProducts} />
-      </div>
     </Fragment>
   );
 };

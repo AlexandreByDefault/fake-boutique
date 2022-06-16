@@ -1,28 +1,35 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&family=Oswald:wght@300;400;500&display=swap');
-
-
 .container{
-height: 60vh;
-width: 100%;
-text-align: center;
-color: rgb(255, 255, 255);
-background: #020323;
+  background-color: red;
 }
-.titleHero{
-  font-family: 'Oswald', sans-serif;
-  text-align: center;
-  font-size: 3rem;
+
+
+
+/*
+@media screen and (max-width: 375px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section{
+    grid-column: 1/2;
+    background-color: red;
+  }
 }
-.intro{
-  font-size: 3rem;
-  font-family: 'Lato',sans-serif;
-  max-width: 1200px;
-  margin: auto;
-  font-weight: 400;
-  color: rgb(217, 217, 4);
+
+@media screen and (max-width: 425px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-.subTitle{
-  margin-left: 10px;
-}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */

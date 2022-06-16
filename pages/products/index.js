@@ -1,6 +1,7 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../../components/button/button";
 import Products from "../../components/product/product-list";
+import style from "../../styles/products.module.css"
 
 const ProductsAll = (props) => {
 
@@ -14,7 +15,7 @@ const ProductsAll = (props) => {
     return filtered;
   };
   return (
-    <section>
+    <section className={style.container}>
       <div>
       <div>
       <Button
@@ -51,7 +52,6 @@ const ProductsAll = (props) => {
           <Products items={products} />
         </div>
       </div>
-      <div></div>
     </section>
   );
 };
