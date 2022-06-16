@@ -17,7 +17,7 @@ const ProductsAll = (props) => {
   return (
     <section className={style.container}>
       <div>
-      <div>
+      <div className={style.divBtn}>
       <Button
       onClick={() => setProducts(props.products)}
       >
@@ -71,6 +71,6 @@ export async function getStaticProps() {
       category: responses[0],
       products: responses[1],
     },
-    revalidate: false,
+    revalidate: 1800,
   };
 }

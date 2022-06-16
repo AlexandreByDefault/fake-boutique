@@ -2,34 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&family=Oswald:wght@300;400;500&display=swap');
 .container{
-  background-color: red;
+  display: grid;
+  grid-template-columns:(5,1fr);
 }
-
-
-
-/*
-@media screen and (max-width: 375px) {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section{
-    grid-column: 1/2;
-    background-color: red;
-  }
+.section{
+height: 50vh;
+width: 100%;
+text-align: center;
+color: rgb(255, 255, 255);
+background: #020323;
 }
-
-@media screen and (max-width: 425px) {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+.titleHero{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size: 3rem;
 }
-
-@media screen and (max-width: 768px) {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
+.intro{
+  font-size: calc(1.5rem + 1vw);
+  font-family: 'Lato',sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  font-weight: 400;
+  color: rgb(217, 217, 4);
+  margin-bottom: 10px;
+}
+.subTitle{
+  margin-left: 10px;
+}

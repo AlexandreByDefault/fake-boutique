@@ -5,21 +5,22 @@
     gap: 10px ;
 
 }
-@media screen and (max-width: 375px) {
+
+@media screen and (max-width: 314px) {
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1025px) {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
