@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState} from "react";
 import Image from "next/image";
 import style from "./product-item.module.css";
 import { Rating } from "react-simple-star-rating";
@@ -14,14 +14,16 @@ const Product = ({ cover, title, price, rating, id }) => {
     return (detailsProduct = `${id}`);
   }
 
-  const { panier, setPanier } = useContext(ProductContext);
+  const [ panier, setPanier ] = useState(false)
 
-  const handleAddPanier = () => {
-    if (panier === true) {
-      setPanier(false);
-    } else {
-      setPanier(true);
+
+  const handleAddPanier = (target) => {
+    if (panier === true ){
+      setPanier(false)
+    }else{
+      setPanier(true)
     }
+
   };
 
   return (
@@ -68,7 +70,7 @@ const Product = ({ cover, title, price, rating, id }) => {
       </div>
       <div className={style.divInteractions}>
         <ButtonLink link={detailsProduct}>Plus infos</ButtonLink>
-        <Button onClick={handleAddPanier}>{panier ? 'Added' : 'Panier'}</Button>
+        <Button onClick={(e) => handleAddPanier(e.currentTarget.id)}  id={id}>{panier === false ? 'Buy' : 'Added' }</Button>
       </div>
     </li>
   );

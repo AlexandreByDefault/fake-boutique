@@ -5,9 +5,10 @@ const handleProductsCategories = (value) => {
   console.log(value);
 };
 
-export const Button = ({ children, onClick, myclassName, value }) => {
+export const Button = ({ children, onClick, myclassName, value, id }) => {
   return (
     <button
+      id={id}
       onClick={onClick}
       value={value}
       className={myclassName ?? style.btnPanier}
