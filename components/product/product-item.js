@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import style from "./product-item.module.css";
 import { Rating } from "react-simple-star-rating";
 import { Button, ButtonLink } from "../button/button";
 import { useRouter } from "next/router";
+import { ProductContext } from "../context/product-context";
 
 const Product = ({ cover, title, price, rating, id }) => {
   let detailsProduct = `/products/${id}`;
@@ -13,19 +14,28 @@ const Product = ({ cover, title, price, rating, id }) => {
     return (detailsProduct = `${id}`);
   }
 
+  const { panier, setPanier } = useContext(ProductContext);
+
+  const handleAddPanier = () => {
+    if (panier === true) {
+      setPanier(false);
+    } else {
+      setPanier(true);
+    }
+  };
+
   return (
     <li className={style.container}>
-
-    <div className={style.divImage}>
-    <Image
-    src={cover}
-    alt={title}
-    width={200}
-    height={200}
-    className={style.image}
-    layout={"fixed"}
-  />
-    </div>
+      <div className={style.divImage}>
+        <Image
+          src={cover}
+          alt={title}
+          width={200}
+          height={200}
+          className={style.image}
+          layout={"fixed"}
+        />
+      </div>
 
       <h2 className={style.title}>{title}</h2>
       <div className={style.divInfos}>
@@ -58,7 +68,7 @@ const Product = ({ cover, title, price, rating, id }) => {
       </div>
       <div className={style.divInteractions}>
         <ButtonLink link={detailsProduct}>Plus infos</ButtonLink>
-        <Button>Panier</Button>
+        <Button onClick={handleAddPanier}>{panier ? 'Added' : 'Panier'}</Button>
       </div>
     </li>
   );

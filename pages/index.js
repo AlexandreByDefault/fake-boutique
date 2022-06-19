@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Fragment } from "react";
 import Products from "../components/product/product-list";
 import style from "../styles/home.module.css";
 import { reduceArray } from "../components/api-utils/api-utils";
-import { ProducContext } from "../components/context/product-context";
+import { ProductContext } from "../components/context/product-context";
 const HomePage = (props) => {
-
-
   return (
-
-    <ProducContext.Provider value={}>
-
 
     <Fragment>
       <section className={style.container}>
@@ -34,7 +29,7 @@ const HomePage = (props) => {
         </div>
       </section>
     </Fragment>
-    </ProducContext.Provider>
+
   );
 };
 export async function getStaticProps() {
