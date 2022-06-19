@@ -10,19 +10,22 @@ const DetailsProduct = (props) => {
   useEffect(() => {
     document.title = props.params.title;
   }, [props.params.title]);
-  const handleClickButton = () => {
-    console.log("hi");
-  };
 
   return (
-    <div className={style.container}>
+    <section className={style.container}>
       <div className={style.subContainer}>
-        <Image
-          src={props.params.image}
-          alt={props.params.title}
-          width={400}
-          height={400}
-        />
+        <div className={style.divImage}>
+          <Image
+            src={props.params.image}
+            alt={props.params.title}
+            width={400}
+            height={400}
+            layout={'fixed'}
+            placeholder={'blur'}
+            blurDataURL
+            priority
+          />
+        </div>
         <div className={style.infosProduct}>
           <div className={style.mainInfos}>
             <h1 className={style.title}>{props.params.title}</h1>
@@ -33,7 +36,6 @@ const DetailsProduct = (props) => {
               <tbody>
                 <tr>
                   <td>
-                    {" "}
                     <span className={style.infos}>Category :</span>
                   </td>
                   <td>
@@ -44,12 +46,11 @@ const DetailsProduct = (props) => {
                 </tr>
                 <tr>
                   <td>
-                    {" "}
                     <span className={style.infos}>Prix :</span>
                   </td>
                   <td>
                     <span className={style.infosValue}>
-                      $ {props.params.price}{" "}
+                      $ {props.params.price}
                     </span>
                   </td>
                 </tr>
@@ -58,7 +59,6 @@ const DetailsProduct = (props) => {
                     <span className={style.infos}>Rate :</span>
                   </td>
                   <td>
-                    {" "}
                     <Rating
                       initialValue={props.params.rating}
                       readonly
@@ -69,54 +69,41 @@ const DetailsProduct = (props) => {
               </tbody>
             </table>
           </div>
-          <Button onClick={handleClickButton} className={style.btn}>
+          <Button className={style.btn}>
             panier
           </Button>
         </div>
       </div>
       <di>
-        <h3 className={style.subtitle}> Product in the same category</h3>
-        {props.similar ? (
+        <h3 className={style.subtitle}>Product in the same category</h3>
           <Products items={props.similar} />
-        ) : (
-          "No Similar product"
-        )}
       </di>
-    </div>
+    </section>
   );
 };
 
 export async function getStaticProps(context) {
-  try {
+
     const res = await fetch("https://fakestoreapi.com/products");
     const products = await res.json();
     const params = context.params.id;
     const productId = products.find(
       (product) => product.id.toString() === params
     );
-    const sameCategory = products.filter(
+    const sameCategory = await products.filter(
       (product) => product.category === productId.category
     );
     const reducedSameCategory = reduceArray(sameCategory, 6);
 
-    if (!productId) {
-      return {
-        notFound: true,
-      };
-    }
 
     return {
       props: {
         params: productId,
         similar: reducedSameCategory,
       },
-      revalidate: false,
+      revalidate: 1800,
     };
-  } catch {
-    return {
-      notFound: true,
-    };
-  }
+
 }
 
 export async function getStaticPaths() {
@@ -128,7 +115,7 @@ export async function getStaticPaths() {
 
   return {
     paths: ids,
-    fallback: "blocking",
+    fallback: false,
   };
 }
 

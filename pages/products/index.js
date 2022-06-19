@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Button } from "../../components/button/button";
 import Products from "../../components/product/product-list";
@@ -6,7 +7,7 @@ import style from "../../styles/products.module.css"
 const ProductsAll = (props) => {
 
   const [products, setProducts] = useState(props.products)
-
+  const router = useRouter()
   const handleProductsCategories = (category) => {
     const filtered = props.products.filter(
       (product) => product.category === category
@@ -59,6 +60,7 @@ const ProductsAll = (props) => {
 export default ProductsAll;
 
 export async function getStaticProps() {
+
   const categories = await fetch(
     "https://fakestoreapi.com/products/categories"
   ).then((res) => res.json());
@@ -73,4 +75,4 @@ export async function getStaticProps() {
     },
     revalidate: 1800,
   };
-}
+  }
